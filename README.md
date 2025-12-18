@@ -120,6 +120,9 @@ Examples:
 
 ## Changelog
 
+### v1.0.1
+- New git branch icon
+
 ### v1.0.0
 - Initial release
 - Create Branch with naming convention

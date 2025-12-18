@@ -2,7 +2,7 @@
   "name": "wl-git-helper",
   "displayName": "WL Git Helper",
   "description": "Git workflow automation for WL projects - branch naming, commit messages, and merge flow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "rithytep",
   "license": "MIT",
   "icon": "icon.png",
