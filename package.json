@@ -1,0 +1,116 @@
+{
+  "name": "wl-git-helper",
+  "displayName": "WL Git Helper",
+  "description": "Git workflow automation for WL projects - branch naming, commit messages, and merge flow",
+  "version": "1.0.0",
+  "publisher": "rithytep",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rithytep/wl-git-helper"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "keywords": [
+    "git",
+    "workflow",
+    "branch",
+    "commit",
+    "merge"
+  ],
+  "activationEvents": [
+    "workspaceContains:.git"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "wl-git.createBranch",
+        "title": "WL Git: Create Branch"
+      },
+      {
+        "command": "wl-git.commit",
+        "title": "WL Git: Smart Commit"
+      },
+      {
+        "command": "wl-git.quickMerge",
+        "title": "WL Git: Quick Merge"
+      },
+      {
+        "command": "wl-git.switchBranch",
+        "title": "WL Git: Switch Branch"
+      },
+      {
+        "command": "wl-git.syncBranch",
+        "title": "WL Git: Sync Branch (Pull & Push)"
+      },
+      {
+        "command": "wl-git.viewHistory",
+        "title": "WL Git: View Recent History"
+      },
+      {
+        "command": "wl-git.stashChanges",
+        "title": "WL Git: Stash Changes"
+      },
+      {
+        "command": "wl-git.popStash",
+        "title": "WL Git: Pop Stash"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "wl-git.createBranch",
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b"
+      },
+      {
+        "command": "wl-git.commit",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g"
+      },
+      {
+        "command": "wl-git.switchBranch",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s"
+      }
+    ],
+    "configuration": {
+      "title": "WL Git Helper",
+      "properties": {
+        "wl-git.branchPrefixes": {
+          "type": "array",
+          "default": ["Feature", "Support", "Bugfix", "Hotfix", "Test"],
+          "description": "Available branch prefixes"
+        },
+        "wl-git.mainBranches": {
+          "type": "array",
+          "default": ["staging", "demo", "production"],
+          "description": "Main workflow branches"
+        },
+        "wl-git.defaultTargetBranch": {
+          "type": "string",
+          "default": "staging",
+          "description": "Default branch to merge into"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}
